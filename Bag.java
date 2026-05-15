@@ -9,8 +9,9 @@
  *  - Test  the 'contains & count' method for the removed element.
  */
 import java.util.ArrayList;
+import java.util.Iterator;
 
-public class Bag<T> {
+public class Bag<T> implements Iterable<T> {
     private ArrayList<T> items;
 
     //Constructor
@@ -42,5 +43,10 @@ public class Bag<T> {
             }
         }
         return counter;
+    }
+
+    @Override
+    public Iterator<T> iterator() {
+        return items.iterator();
     }
 }
